@@ -8,6 +8,30 @@ export default class KanbanAPI {
 
     return colum.itemns;
   }
+
+  static insertItem(columId, content) {
+    const data = read();
+    const colum = data.find(colum => colum.id == columId);
+    const item = {
+      id: Math.floor(Math.random() * 100000),
+      content
+    };
+
+    if (!colum) {
+      throw new Error("Coluna nao encontrada");
+    }
+    colum.itemns.push(item);
+    save(data);
+
+    return item;
+  }
+
+  static updateitem(itemId, newProps) {
+    const data = read();
+    const [item, correntColum] = (() => {
+      return [1, 2] //MINUTO 26:48 DO VIDEO
+    })();
+  }
 }
 
 function read() {

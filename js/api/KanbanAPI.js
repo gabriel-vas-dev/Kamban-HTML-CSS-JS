@@ -26,10 +26,16 @@ export default class KanbanAPI {
     return item;
   }
 
-  static updateitem(itemId, newProps) {
+  static updateItem(itemId, newProps) {
     const data = read();
     const [item, correntColum] = (() => {
-      return [1, 2] //MINUTO 26:48 DO VIDEO
+      for (const colum of data) {
+        const item = colum.itemns.find(item => item.id == itemId);
+
+        if (item) {
+          return [item, colum];  //28:29 do video
+        }
+      }
     })();
   }
 }

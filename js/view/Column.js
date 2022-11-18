@@ -41,7 +41,7 @@ export default class Column {
 			<div class="kanban__column">
 				<div class="kanban__column-title"></div>
 				<div class="kanban__column-items"></div>
-				<button class="kanban__add-item" type="button">+ Add</button>
+				<button class="kanban__add-item" type="button">+ Adicionar</button>
 			</div>
 		`).children[0];
   }
